@@ -21,7 +21,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public PostDto createPostDto(PostDto postDto) {
 
-        //convert entity to PostDto
+
         Post post = new Post();
         post.setDescription(postDto.getDescription());
         post.setTitle(postDto.getTitle());
@@ -29,7 +29,7 @@ public class PostServiceImpl implements PostService {
         post.setId(postDto.getId());
         Post savedPost = postRepository.save(post);
 
-        //convert PostDto to entity
+
         PostDto postResponseDto = new PostDto();
         postResponseDto.setId(savedPost.getId());
         postResponseDto.setDescription(savedPost.getDescription());
